@@ -1,8 +1,11 @@
+const list = document.querySelector('#categories');
+const item = list.querySelectorAll('li.item');
+console.log(`Number of categories: ${item.length}`);
 
-function makeTransaction(quantity, pricePerDroid) {
-    return `You ordered ${quantity} droids worth ${quantity * pricePerDroid} credits!`;
-}
+item.forEach(category => {
+    const h2 = category.querySelector('h2');
+    const el = category.querySelectorAll('li');
 
-    console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000 credits!"
-    console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth 3000 credits!"
-    console.log(makeTransaction(10, 500));
+    console.log(`Categories: ${h2.textContent}`);
+    console.log(`Elements: ${el.length}`);
+})
